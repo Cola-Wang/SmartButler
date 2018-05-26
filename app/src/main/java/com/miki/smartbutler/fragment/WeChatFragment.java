@@ -68,9 +68,6 @@ public class WeChatFragment extends Fragment {
             }
         });
 
-        WeChatAdapter adapter = new WeChatAdapter(getActivity(), mList);
-        mListView.setAdapter(adapter);
-
         //点击事件
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -105,6 +102,9 @@ public class WeChatFragment extends Fragment {
                 mListTitle.add(title);
                 mListUrl.add(url);
             }
+
+            WeChatAdapter adapter = new WeChatAdapter(getActivity(), mList);
+            mListView.setAdapter(adapter);
         } catch (JSONException e) {
             e.printStackTrace();
         }
